@@ -47,7 +47,7 @@ export const mapFields = normalizeNamespace((namespace, fields, getterType, muta
         return this.$store.getters[getterType](path);
       },
       set(value) {
-        this.$store.commit(mutationType, { path, value });
+        this.$store.dispatch(mutationType, { path, value });
       },
     };
 
@@ -84,7 +84,7 @@ export const mapMultiRowFields = normalizeNamespace((
                 return store.getters[getterType](fieldPath);
               },
               set(value) {
-                store.commit(mutationType, { path: fieldPath, value });
+                store.dispatch(mutationType, { path: fieldPath, value });
               },
             });
           }, {}));
