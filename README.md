@@ -1,11 +1,5 @@
 # vuex-map-fields
 
-[![Patreon](https://img.shields.io/badge/patreon-donate-blue.svg)](https://www.patreon.com/maoberlehner)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/maoberlehner)
-[![Build Status](https://travis-ci.org/maoberlehner/vuex-map-fields.svg?branch=master)](https://travis-ci.org/maoberlehner/vuex-map-fields)
-[![Coverage Status](https://coveralls.io/repos/github/maoberlehner/vuex-map-fields/badge.svg?branch=master)](https://coveralls.io/github/maoberlehner/vuex-map-fields?branch=master)
-[![GitHub stars](https://img.shields.io/github/stars/maoberlehner/vuex-map-fields.svg?style=social&label=Star)](https://github.com/maoberlehner/vuex-map-fields)
-
 > Enable two-way data binding for form fields saved in a Vuex store.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O7U55Y)
@@ -13,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save vuex-map-fields
+npm install --save @azaraliyev/vmf
 ```
 
 ### Basic example
@@ -28,7 +22,7 @@ import Vuex from 'vuex';
 
 // Import the `getField` getter and the `updateField`
 // mutation function from the `vuex-map-fields` module.
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
@@ -61,7 +55,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { mapFields } from 'vuex-map-fields';
+import { mapFields } from '@azaraliyev/vmf';
 
 export default {
   computed: {
@@ -90,7 +84,7 @@ Oftentimes you want to have nested properties in the Vuex store. `vuex-map-field
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
@@ -127,7 +121,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { mapFields } from 'vuex-map-fields';
+import { mapFields } from '@azaraliyev/vmf';
 
 export default {
   computed: {
@@ -161,7 +155,7 @@ Sometimes you might want to give your computed properties different names than w
 </template>
 
 <script>
-import { mapFields } from 'vuex-map-fields';
+import { mapFields } from '@azaraliyev/vmf';
 
 export default {
   computed: {
@@ -186,7 +180,7 @@ By default `vuex-map-fields` is searching for the given properties starting from
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
@@ -226,7 +220,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { createHelpers } from 'vuex-map-fields';
+import { createHelpers } from '@azaraliyev/vmf';
 
 // The getter and mutation types we're providing
 // here, must be the same as the function names we've
@@ -262,7 +256,7 @@ Vuex makes it possible to divide the store into modules.
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { createHelpers } from 'vuex-map-fields';
+import { createHelpers } from '@azaraliyev/vmf';
 
 // Because by default, getters and mutations in Vuex
 // modules, are globally accessible and not namespaced,
@@ -304,7 +298,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { createHelpers } from 'vuex-map-fields';
+import { createHelpers } from '@azaraliyev/vmf';
 
 // We're using the same getter and mutation types
 // as we've used in the store above.
@@ -333,7 +327,7 @@ By default, mutations and getters inside modules are registered under the global
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
@@ -366,7 +360,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { createHelpers } from 'vuex-map-fields';
+import { createHelpers } from '@azaraliyev/vmf';
 
 // `fooModule` is the name of the Vuex module.
 const { mapFields } = createHelpers({
@@ -394,7 +388,7 @@ Or you can pass the module namespace string as the first argument of the `mapFie
 </template>
 
 <script>
-import { mapFields } from 'vuex-map-fields';
+import { mapFields } from '@azaraliyev/vmf';
 
 export default {
   computed: {
@@ -417,7 +411,7 @@ If you want to build a form which allows the user to enter multiple rows of a sp
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
@@ -457,7 +451,7 @@ export default new Vuex.Store({
 </template>
 
 <script>
-import { mapMultiRowFields } from 'vuex-map-fields';
+import { mapMultiRowFields } from '@azaraliyev/vmf';
 
 export default {
   computed: {
@@ -478,7 +472,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 // You now have to also import the `getField()` function.
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from '@azaraliyev/vmf';
 
 Vue.use(Vuex);
 
