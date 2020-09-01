@@ -85,17 +85,17 @@ describe(`index`, () => {
       expect(mockGetter).toBeCalledWith(`foo`);
     });
 
-    test(`It should commit the \`updateField\` mutation when calling a field setter.`, () => {
-      const commitMock = jest.fn();
+    test(`It should dispatch the \`updateField\` action when calling a field setter.`, () => {
+      const dispatchMock = jest.fn();
       const objectOfFields = {
         foo: `foo`,
         bar: `bar.baz`,
       };
       const mappedFields = mapFields(objectOfFields);
 
-      mappedFields.bar.set.apply({ $store: { commit: commitMock } }, [`newFieldValue`]);
+      mappedFields.bar.set.apply({ $store: { dispatch: dispatchMock } }, [`newFieldValue`]);
 
-      expect(commitMock).toBeCalledWith(`updateField`, { path: `bar.baz`, value: `newFieldValue` });
+      expect(dispatchMock).toBeCalledWith(`updateField`, { path: `bar.baz`, value: `newFieldValue` });
     });
 
     describe(`Namespacing`, () => {
@@ -119,17 +119,17 @@ describe(`index`, () => {
         expect(mockGetter).toBeCalledWith(`foo`);
       });
 
-      test(`It should commit the namespaced mutation function.`, () => {
-        const commitMock = jest.fn();
+      test(`It should dispatch the namespaced action function.`, () => {
+        const dispatchMock = jest.fn();
         const objectOfFields = {
           foo: `foo`,
           bar: `bar.baz`,
         };
         const mappedFields = mapFields(`fooModule`, objectOfFields);
 
-        mappedFields.bar.set.apply({ $store: { commit: commitMock } }, [`newFieldValue`]);
+        mappedFields.bar.set.apply({ $store: { dispatch: dispatchMock } }, [`newFieldValue`]);
 
-        expect(commitMock).toBeCalledWith(`fooModule/updateField`, { path: `bar.baz`, value: `newFieldValue` });
+        expect(dispatchMock).toBeCalledWith(`fooModule/updateField`, { path: `bar.baz`, value: `newFieldValue` });
       });
     });
   });
@@ -170,7 +170,7 @@ describe(`index`, () => {
       expect(mockGetField).lastCalledWith(`fieldRows[1].foo`);
     });
 
-    test(`It should commit new values to the store.`, () => {
+    test(`It should dispatch new values to the store.`, () => {
       const mockFieldRows = [
         {
           foo: `Foo`,
@@ -181,21 +181,21 @@ describe(`index`, () => {
           bar: `Bar`,
         },
       ];
-      const mockCommit = jest.fn();
+      const mockDispatch = jest.fn();
       const mappedFieldRows = mapMultiRowFields([`fieldRows`]);
 
       const getterSetters = mappedFieldRows.fieldRows.get.apply({
         $store: {
           getters: { getField: () => mockFieldRows },
-          commit: mockCommit,
+          dispatch: mockDispatch,
         },
       });
 
       getterSetters[0].bar = `New Bar`; // Trigger setter function.
-      expect(mockCommit).toBeCalledWith(`updateField`, { path: `fieldRows[0].bar`, value: `New Bar` });
+      expect(mockDispatch).toBeCalledWith(`updateField`, { path: `fieldRows[0].bar`, value: `New Bar` });
 
       getterSetters[1].foo = `New Foo`; // Trigger setter function.
-      expect(mockCommit).toBeCalledWith(`updateField`, { path: `fieldRows[1].foo`, value: `New Foo` });
+      expect(mockDispatch).toBeCalledWith(`updateField`, { path: `fieldRows[1].foo`, value: `New Foo` });
     });
   });
 

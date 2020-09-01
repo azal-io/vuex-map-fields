@@ -20,4 +20,9 @@ export default ({ getField, updateField }) => new Vuex.Store({
   mutations: {
     updateField,
   },
+  actions: {
+    updateField({ commit }, { path, value }) {
+      commit(`updateField`, { path, value });
+    },
+  },
 });

@@ -41,6 +41,11 @@ describe(`Component initialized with customized getter and mutation functions.`,
           updateField(state.form, payload);
         },
       },
+      actions: {
+        updateFormField({ commit }, { path, value }) {
+          commit(`updateFormField`, { path, value });
+        },
+      },
     });
 
     wrapper = shallowMount(Component, { localVue, store });

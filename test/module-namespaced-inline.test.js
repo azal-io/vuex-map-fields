@@ -35,6 +35,11 @@ describe(`Component initialized with namespaced Vuex module.`, () => {
           mutations: {
             updateField,
           },
+          actions: {
+            updateField({ commit }, { path, value }) {
+              commit(`updateField`, { path, value });
+            },
+          },
         },
       },
     });

@@ -46,6 +46,11 @@ describe(`Component initialized with multi row setup.`, () => {
       mutations: {
         updateField,
       },
+      actions: {
+        updateField({ commit }, { path, value }) {
+          commit(`updateField`, { path, value });
+        },
+      },
     });
 
     wrapper = shallowMount(Component, { localVue, store });

@@ -1,5 +1,5 @@
 {
-  "name": "vuex-map-fields",
+  "name": "vuex-map-fields-with-dispatch",
   "version": "1.4.0",
   "description": "Enable two-way data binding for form fields saved in a Vuex store",
   "keywords": [
@@ -7,8 +7,8 @@
     "vuex",
     "two-way data binding"
   ],
-  "author": "Markus Oberlehner",
-  "homepage": "https://github.com/maoberlehner/vuex-map-fields",
+  "author": "AZAL",
+  "homepage": "https://github.com/azal-io/vuex-map-fields",
   "license": "MIT",
   "scripts": {
     "scripts:umd": "rollup --config --output.format umd --name vuex-map-fields --output.file dist/index.js src/index.js",
