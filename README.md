@@ -2,8 +2,6 @@
 
 > Enable two-way data binding for form fields saved in a Vuex store.
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O7U55Y)
-
 ## Install
 
 ```bash
@@ -491,28 +489,6 @@ export default new Vuex.Store({
   },
 });
 ```
-
-## Patreon Sponsors
-
-[![Spiffy](https://res.cloudinary.com/maoberlehner/image/upload/c_scale,h_68,q_auto/v1549339992/github/vuex-map-fields/spiffy-logo.png)](https://spiffy.co/)
-
-[Become a sponsor](https://www.patreon.com/maoberlehner) and get your logo in this README with a link to your site.
-
-## Articles
-
-- [Form Fields, Two-Way Data Binding and Vuex](https://markus.oberlehner.net/blog/form-fields-two-way-data-binding-and-vuex/)
-- [How to Handle Multi-row Forms with Vue, Vuex and vuex-map-fields](https://markus.oberlehner.net/blog/how-to-handle-multi-row-forms-with-vue-vuex-and-vuex-map-fields/)
-- [How to Structure a Complex Vuex Store](https://markus.oberlehner.net/blog/how-to-structure-a-complex-vuex-store/)
-
-## About
-
-### Author
-
-Markus Oberlehner  
-Website: https://markus.oberlehner.net  
-Twitter: https://twitter.com/MaOberlehner  
-PayPal.me: https://paypal.me/maoberlehner  
-Patreon: https://www.patreon.com/maoberlehner
 
 ### License
 
